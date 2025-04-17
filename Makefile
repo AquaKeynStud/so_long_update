@@ -6,7 +6,7 @@ NAME = so_long
 
 CC				:=	cc
 
-CFLAGS			:= -Wall -Wextra -Werror -g3
+CFLAGS			:= -Wall -Wextra -Werror
 
 RM				:=	rm	-rf
 
@@ -97,7 +97,7 @@ all:	$(NAME)
 $(D_OBJ):
 	@mkdir -p $@
 
-$(NAME):	$(MOBJ) $(MINC) lmlx
+$(NAME):	$(MOBJ) $(MINC) lmlx | $(D_OBJ) Makefile
 	@$(CC) $(CFLAGS) $(MOBJ) -I$(D_MAN) -L$(D_LIB) -lmlx -lXext -lX11 -lftprintf -lgnl -o $@
 	@echo "\e[0;32mProgramme créé avec succès ! 🧬\e[0m"
 

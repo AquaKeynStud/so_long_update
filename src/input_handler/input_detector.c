@@ -78,7 +78,7 @@ int	handle_keypress(int keycode, t_data *data)
 
 	map = (*data->map)->map;
 	if (check_input(keycode) < 0)
-		return (ft_printf("🫧 Cette touche n'est pas attribuée 🫧\n"));
+		return (ft_printf("🫧 This input has not been attributed 🫧\n"));
 	if (keycode == KEY_ESC)
 		return (mlx_loop_end(data->mlx));
 	if (keycode == KEY_W || keycode == KEY_UP)

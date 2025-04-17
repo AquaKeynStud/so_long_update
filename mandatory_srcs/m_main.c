@@ -56,10 +56,11 @@ static bool	verif_ext(char *file, char *ext)
 	pad = ft_strlen(ext);
 	if (len < pad)
 		return (false);
-	while (pad--)
+	while (pad >= 0)
 	{
 		if (file[len - pad] != ext[ft_strlen(ext) - pad])
 			return (false);
+		pad--;
 	}
 	return (true);
 }

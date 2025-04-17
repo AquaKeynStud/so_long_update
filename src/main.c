@@ -70,12 +70,13 @@ static bool	verif_ext(char *file, char *ext)
 
 	len = ft_strlen(file);
 	pad = ft_strlen(ext);
-	if (len < pad)
+	if (len < pad || !*file || !*ext)
 		return (false);
-	while (pad--)
+	while (pad >= 0)
 	{
 		if (file[len - pad] != ext[ft_strlen(ext) - pad])
 			return (false);
+		pad--;
 	}
 	return (true);
 }
